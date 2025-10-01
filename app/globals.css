@@ -1,26 +1,208 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-primary: 175 219 216;
+    --color-primary-dark: 13 148 136;
+    --color-secondary: 251 191 36;
+    --color-accent: 79 70 229;
+    --color-success: 34 197 94;
+    --color-warning: 245 158 11;
+    --color-error: 239 68 68;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply text-gray-800 antialiased;
+    font-family: 'Tajawal', system-ui, sans-serif;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-teal-500 text-white hover:bg-teal-600 focus:ring-teal-500;
+  }
+
+  .btn-secondary {
+    @apply bg-amber-500 text-white hover:bg-amber-600 focus:ring-amber-500;
+  }
+
+  .btn-outline {
+    @apply border border-gray-300 bg-transparent hover:bg-gray-50 focus:ring-gray-500;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-gray-100 focus:ring-gray-500;
+  }
+
+  .input {
+    @apply rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-1 focus:ring-teal-500;
+  }
+
+  .label {
+    @apply mb-1 block text-sm font-medium text-gray-700;
+  }
+
+  .card {
+    @apply rounded-lg bg-white p-6 shadow-sm;
+  }
+
+  /* Responsive utilities */
+  .container-responsive {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .grid-responsive {
+    @apply grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+
+  .text-responsive {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+
+  .heading-responsive {
+    @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
+  }
+
+  /* Mobile-first responsive tables */
+  .table-responsive {
+    @apply min-w-full overflow-x-auto;
+  }
+
+  .table-mobile {
+    @apply block sm:table;
+  }
+
+  .table-mobile thead {
+    @apply hidden sm:table-header-group;
+  }
+
+  .table-mobile tbody {
+    @apply block sm:table-row-group;
+  }
+
+  .table-mobile tr {
+    @apply block border-b border-gray-200 pb-4 mb-4 sm:table-row sm:border-b-0 sm:pb-0 sm:mb-0;
+  }
+
+  .table-mobile td {
+    @apply block text-right sm:table-cell sm:text-left;
+  }
+
+  .table-mobile td:before {
+    content: attr(data-label) ": ";
+    @apply font-medium text-gray-900 sm:hidden;
+  }
+
+  /* RTL specific overrides */
+  [dir="rtl"] .ml-auto {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  [dir="rtl"] .mr-auto {
+    margin-left: auto;
+    margin-right: 0;
+  }
+
+  [dir="rtl"] .ml-1 {
+    margin-left: 0;
+    margin-right: 0.25rem;
+  }
+
+  [dir="rtl"] .mr-1 {
+    margin-left: 0.25rem;
+    margin-right: 0;
+  }
+
+  [dir="rtl"] .ml-2 {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
+
+  [dir="rtl"] .mr-2 {
+    margin-left: 0.5rem;
+    margin-right: 0;
+  }
+
+  [dir="rtl"] .ml-3 {
+    margin-left: 0;
+    margin-right: 0.75rem;
+  }
+
+  [dir="rtl"] .mr-3 {
+    margin-left: 0.75rem;
+    margin-right: 0;
+  }
+
+  [dir="rtl"] .ml-4 {
+    margin-left: 0;
+    margin-right: 1rem;
+  }
+
+  [dir="rtl"] .mr-4 {
+    margin-left: 1rem;
+    margin-right: 0;
+  }
+
+  /* Touch-friendly inputs */
+  @media (max-width: 768px) {
+    .input {
+      @apply min-h-[44px] text-base;
+    }
+    
+    .btn {
+      @apply min-h-[44px] px-6;
+    }
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Responsive breakpoints */
+@media (max-width: 375px) {
+  .container-responsive {
+    @apply px-2;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 767px) {
+  .grid-responsive {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-responsive {
+    @apply grid-cols-2 lg:grid-cols-3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    @apply grid-cols-3 xl:grid-cols-4;
+  }
 }
