@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Asks owners to choose their business type at the start of the setup wizard.
+Steps:
+1. Presents preset business categories with icons and highlights the current selection.
+2. Validates that a type is chosen, collecting a custom label when 'other' is selected.
+3. Persists the chosen business type into the shared setup data before continuing.
+Component Dependencies: None
+External Libs: react, react-intl, lucide-react
+*/
 
 import { useState } from "react";
 import { useIntl } from "react-intl";
@@ -153,3 +163,4 @@ const BusinessTypeStep = ({ data, updateData, nextStep }: any) => {
 };
 
 export default BusinessTypeStep;
+

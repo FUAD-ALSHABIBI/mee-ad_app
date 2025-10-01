@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Displays localized pricing packages with billing cycle toggles and plan actions.
+Steps:
+1. Builds plan definitions and copy with react-intl for dynamic localization.
+2. Manages billing cycle state to adjust displayed pricing.
+3. Navigates to registration routes with the selected plan and cycle when a package is chosen.
+Component Dependencies: None
+External Libs: react, next/navigation, react-intl, lucide-react
+*/
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -310,3 +320,4 @@ export default function PricingPage() {
     </div>
   );
 }
+

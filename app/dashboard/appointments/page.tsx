@@ -1,4 +1,14 @@
-﻿import { redirect } from "next/navigation";
+﻿/*
+Component Summary: Retrieves appointment data for the dashboard appointments view.
+Steps:
+1. Authenticates via Supabase and redirects unauthenticated users to the login screen.
+2. Fetches the owning business and its appointments while logging any fetch errors.
+3. Provides the results to the AppointmentsClient component for interactive management.
+Component Dependencies: app/dashboard/appointments/components/AppointmentsClient.tsx
+External Libs: next/navigation, @/utils/supabase/server, @/lib/appointment
+*/
+
+import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
 import AppointmentsClient from "./components/AppointmentsClient";
 import type { Appointment } from "@/lib/appointment";
@@ -63,3 +73,4 @@ export default async function AppointmentsPage() {
     />
   );
 }
+

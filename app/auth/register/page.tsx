@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Registers new users through Supabase and prepares them for onboarding.
+Steps:
+1. Collects name, email, and password confirmation with validation checks.
+2. Submits a Supabase signUp request storing the name in user metadata and setting redirect URLs.
+3. Routes successful signups to the setup flow while surfacing any errors to the form.
+Component Dependencies: None
+External Libs: react, next/navigation, next/link, react-intl, lucide-react, @supabase/ssr
+*/
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -182,3 +192,4 @@ export default function RegisterPage() {
     </div>
   );
 }
+

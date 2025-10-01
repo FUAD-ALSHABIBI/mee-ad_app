@@ -1,4 +1,24 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Renders the public site header with navigation, auth CTAs, and language switching.
+Steps:
+1. Skips rendering when the active path is under /dashboard.
+2. Builds localized navigation labels via react-intl.
+3. Toggles desktop and mobile menus while routing users with next/navigation.
+Component Dependencies: components/common/LanguageSwitcher.tsx
+External Libs: react, next/link, next/navigation, react-intl, lucide-react
+*/
+
+/*
+Component Summary: Renders the public site header with navigation, auth CTAs, and language switching.
+Steps:
+1. Skips rendering when the active path is under /dashboard.
+2. Builds localized navigation labels via react-intl.
+3. Toggles desktop and mobile menus while routing users with next/navigation.
+Dependent Components: app/layout.tsx
+External Libs: react, next/link, next/navigation, react-intl, lucide-react
+*/
 
 import { useState } from "react";
 import Link from "next/link";
@@ -167,5 +187,7 @@ export default function Header({ isAuthenticated }: HeaderProps) {
     </header>
   );
 }
+
+
 
 

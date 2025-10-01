@@ -1,5 +1,25 @@
 ﻿"use client";
 
+/*
+Component Summary: Provides a locale dropdown that persists the chosen language in a cookie.
+Steps:
+1. Reads the active locale from NEXT_LOCALE cookies and prepares translated labels.
+2. Toggles a popover menu with React state to list available languages.
+3. Persists the selection with js-cookie and reloads to refresh SSR content.
+Component Dependencies: None
+External Libs: react, react-intl, js-cookie, lucide-react
+*/
+
+/*
+Component Summary: Provides a locale dropdown that persists the chosen language in a cookie.
+Steps:
+1. Reads the active locale from NEXT_LOCALE cookies and prepares translated labels.
+2. Toggles a popover menu with React state to list available languages.
+3. Persists the selection with js-cookie and reloads to refresh SSR content.
+Dependent Components: components/layout/Header.tsx, app/dashboard/components/DashboardHeader.tsx
+External Libs: react, react-intl, js-cookie, lucide-react
+*/
+
 import { useState } from "react";
 import { Globe } from "lucide-react";
 import Cookies from "js-cookie";
@@ -67,3 +87,5 @@ export default function LanguageSwitcher() {
     </div>
   );
 }
+
+

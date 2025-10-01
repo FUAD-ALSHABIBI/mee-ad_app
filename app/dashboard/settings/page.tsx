@@ -1,4 +1,14 @@
-﻿import { redirect } from "next/navigation";
+﻿/*
+Component Summary: Loads profile and service data for the dashboard settings experience.
+Steps:
+1. Authenticates the current user via Supabase and redirects unauthenticated visitors to login.
+2. Retrieves business metadata and service definitions from the database.
+3. Passes normalized results down to the SettingsClient component for rendering and edits.
+Component Dependencies: app/dashboard/settings/components/SettingsClient.tsx
+External Libs: next/navigation, @/utils/supabase/server
+*/
+
+import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
 import SettingsClient, {
@@ -82,3 +92,4 @@ export default async function SettingsPage() {
     />
   );
 }
+

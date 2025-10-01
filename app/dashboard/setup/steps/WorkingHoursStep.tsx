@@ -1,3 +1,13 @@
+﻿/*
+Component Summary: Captures weekly working hours as part of the setup wizard.
+Steps:
+1. Maintains local working hour state while toggling each day open or closed.
+2. Adds, updates, and removes time slots for selected days with lucide icons for feedback.
+3. Persists the updated schedule back into the shared setup data before advancing.
+Component Dependencies: None
+External Libs: react, react-intl, lucide-react
+*/
+
 import { useState } from "react";
 import { useIntl } from "react-intl";
 import { Plus, Trash2 } from "lucide-react";
@@ -151,3 +161,4 @@ const WorkingHoursStep = ({ data, updateData, nextStep, prevStep }: any) => {
 };
 
 export default WorkingHoursStep;
+

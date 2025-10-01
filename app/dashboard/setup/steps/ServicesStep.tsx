@@ -1,3 +1,13 @@
+﻿/*
+Component Summary: Collects the business service catalog during onboarding.
+Steps:
+1. Captures service attributes with validation before adding them to the local list.
+2. Supports editing inputs, choosing currency, and removing rows with lucide icon buttons.
+3. Ensures at least one service is defined before saving to shared setup data and continuing.
+Component Dependencies: None
+External Libs: react, react-intl, lucide-react
+*/
+
 import { useState } from "react";
 import { useIntl } from "react-intl";
 import { Plus, Trash2 } from "lucide-react";
@@ -57,8 +67,8 @@ const ServicesStep = ({ data, updateData, nextStep, prevStep }: any) => {
 
   const currencies = [
     { code: "USD", symbol: "$" },
-    { code: "EUR", symbol: "€" },
-    { code: "GBP", symbol: "£" },
+    { code: "EUR", symbol: "â‚¬" },
+    { code: "GBP", symbol: "Â£" },
     { code: "SAR", symbol: "SAR" },
     { code: "AED", symbol: "AED" },
   ];
@@ -222,3 +232,4 @@ const ServicesStep = ({ data, updateData, nextStep, prevStep }: any) => {
 };
 
 export default ServicesStep;
+

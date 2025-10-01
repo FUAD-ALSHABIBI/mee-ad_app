@@ -1,4 +1,15 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Orchestrates the business onboarding wizard inside the dashboard.
+Steps:
+1. Manages multi-step state and accumulates setup form data across the workflow.
+2. Renders individual configuration steps with a progress indicator and navigation controls.
+3. Calls Supabase auth and setup helpers to persist configuration and surface the booking URL.
+Component Dependencies: app/dashboard/setup/steps/BusinessTypeStep.tsx, app/dashboard/setup/steps/ServicesStep.tsx, app/dashboard/setup/steps/WorkingHoursStep.tsx, app/dashboard/setup/steps/BookingConfirmationStep.tsx, app/dashboard/setup/steps/CompletionStep.tsx
+External Libs: react, react-intl, lucide-react, @/lib/supabase/auth, @/lib/setup
+*/
+
 import { useState } from "react";
 import { useIntl } from "react-intl";
 import { CheckCircle2 } from "lucide-react";
@@ -135,3 +146,4 @@ const SetupWizard = () => {
 };
 
 export default SetupWizard;
+

@@ -1,5 +1,15 @@
 ﻿"use client";
 
+/*
+Component Summary: Manages appointments in the dashboard with filtering and status updates.
+Steps:
+1. Initializes appointment state from server props and keeps it in sync with incoming updates.
+2. Refreshes data and updates appointment status via Supabase-backed helpers.
+3. Renders filter controls, error messaging, and the appointment list with action buttons.
+Component Dependencies: None
+External Libs: react, react-intl, next/link, lucide-react, @/lib/appointment
+*/
+
 import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useIntl } from "react-intl";
@@ -406,3 +416,4 @@ function AppointmentRow({ appointment, intl, isUpdating, onUpdateStatus }: Appoi
     </div>
   );
 }
+

@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Implements the responsive dashboard shell with sidebar navigation and header.
+Steps:
+1. Tracks viewport size and sidebar visibility to adapt between mobile and desktop layouts.
+2. Renders the Sidebar component with brand chrome and overlay handling.
+3. Displays the top DashboardHeader plus the main content slot for child pages.
+Component Dependencies: app/dashboard/components/Sidebar.tsx, app/dashboard/components/DashboardHeader.tsx
+External Libs: react, react-intl, lucide-react
+*/
 
 import { useState, useEffect } from "react";
 import { Menu, X, Calendar } from "lucide-react";
@@ -105,4 +115,5 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
 };
 
 export default DashboardLayout;
+
 

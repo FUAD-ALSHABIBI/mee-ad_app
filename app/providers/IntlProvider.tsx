@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Supplies a flattened react-intl provider for the selected locale.
+Steps:
+1. Flattens nested locale JSON files into key-value pairs for react-intl consumption.
+2. Chooses the provided locale with a safe fallback to English.
+3. Wraps children with IntlProvider so translations are available throughout the tree.
+Component Dependencies: None
+External Libs: react-intl, @/i18n/locales/en.json, @/i18n/locales/ar.json
+*/
 
 import { IntlProvider } from "react-intl";
 import en from "@/i18n/locales/en.json";
@@ -43,3 +53,4 @@ export default function IntlProviderWrapper({
     </IntlProvider>
   );
 }
+

@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Shows a friendly fallback when a business booking page cannot load.
+Steps:
+1. Chooses heading and body message descriptors based on the variant prop.
+2. Uses react-intl to localize both the heading and description copy.
+3. Presents a centered, full-height layout to focus attention on the status message.
+Component Dependencies: None
+External Libs: react-intl
+*/
 
 import { useIntl } from "react-intl";
 
@@ -43,3 +53,4 @@ const BookingUnavailable = ({ variant }: BookingUnavailableProps) => {
 };
 
 export default BookingUnavailable;
+

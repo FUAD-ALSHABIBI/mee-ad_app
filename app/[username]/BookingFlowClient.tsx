@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Coordinates the four-step public booking flow for a business profile.
+Steps:
+1. Tracks current step, booking data, and submission state with React hooks and refs.
+2. Renders step-specific components for service, schedule, client info, and confirmation stages.
+3. Builds an appointment payload and calls createAppointment to persist the booking.
+Component Dependencies: app/[username]/steps/ServiceSelection.tsx, app/[username]/steps/DateTimeSelection.tsx, app/[username]/steps/ClientInfoForm.tsx, app/[username]/steps/BookingConfirmation.tsx
+External Libs: react, react-intl, lucide-react, @/lib/appointment
+*/
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useIntl } from "react-intl";
@@ -415,3 +425,4 @@ const BookingFlowClient = ({ business, services }: BookingFlowClientProps) => {
 };
 
 export default BookingFlowClient;
+

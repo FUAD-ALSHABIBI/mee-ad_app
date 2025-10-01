@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Celebrates setup completion and shares the generated booking link.
+Steps:
+1. Shows a localized success message with the finished booking URL.
+2. Lets the user copy the link using navigator.clipboard with temporary feedback state.
+3. Offers quick access buttons to view the public page or return to the dashboard.
+Component Dependencies: next/link
+External Libs: react, react-intl, lucide-react
+*/
 
 import { useState } from "react";
 import { useIntl } from "react-intl";
@@ -83,4 +93,5 @@ const CompletionStep = ({ url }: any) => {
 };
 
 export default CompletionStep;
+
 

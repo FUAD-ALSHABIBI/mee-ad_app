@@ -1,4 +1,24 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Guides users through a modal-based password reset flow backed by Supabase auth.
+Steps:
+1. Tracks modal visibility and step progression across email, verify, reset, and success views.
+2. Calls Supabase resetPasswordForEmail and handles demo verification feedback.
+3. Validates new credentials, simulates reset, and clears form state when closing.
+Component Dependencies: None
+External Libs: react, react-intl, @supabase/ssr, lucide-react
+*/
+
+/*
+Component Summary: Guides users through a modal-based password reset flow backed by Supabase auth.
+Steps:
+1. Tracks modal visibility and step progression across email, verify, reset, and success views.
+2. Calls Supabase resetPasswordForEmail and handles demo verification feedback.
+3. Validates new credentials, simulates reset, and clears form state when closing.
+Dependent Components: app/auth/login/page.tsx
+External Libs: react, react-intl, @supabase/ssr, lucide-react
+*/
 
 import { useState } from "react";
 import { useIntl } from "react-intl";
@@ -259,4 +279,6 @@ export default function ForgotPasswordModal({ isOpen, onClose }: ForgotPasswordM
     </div>
   );
 }
+
+
 

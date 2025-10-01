@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Presents the interactive dashboard overview with stats, services, and upcoming appointments.
+Steps:
+1. Memoizes dashboard statistics and service pricing details with react-intl formatting.
+2. Renders welcome messaging and key metrics with icon cards and setup call-to-actions.
+3. Lists services and upcoming appointments with status indicators for quick scanning.
+Component Dependencies: None
+External Libs: react, react-intl, next/link, lucide-react
+*/
 
 import { useMemo } from "react";
 import { useIntl } from "react-intl";
@@ -324,6 +334,7 @@ export default function DashboardClient({
     </div>
   );
 }
+
 
 
 

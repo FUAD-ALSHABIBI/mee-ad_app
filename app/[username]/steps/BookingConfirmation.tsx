@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Presents the final confirmation view once a booking is successful.
+Steps:
+1. Formats business and appointment details with react-intl for friendly display.
+2. Manages local state for post-booking actions such as adding to a calendar.
+3. Surfaces contact methods and a reset handler so clients can start over if needed.
+Component Dependencies: None
+External Libs: react, react-intl, lucide-react
+*/
 
 import { useMemo, useState } from "react";
 import { useIntl } from "react-intl";
@@ -262,3 +272,4 @@ const BookingConfirmation = ({
 };
 
 export default BookingConfirmation;
+

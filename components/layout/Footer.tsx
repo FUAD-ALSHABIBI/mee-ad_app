@@ -1,5 +1,25 @@
 ﻿"use client";
 
+/*
+Component Summary: Renders the public marketing footer with localized link sections and social links.
+Steps:
+1. Exits early on dashboard routes to avoid duplicate layouts.
+2. Groups navigation and auth links with react-intl copy.
+3. Shows social icons and the current year for brand presence.
+Component Dependencies: None
+External Libs: next/link, next/navigation, react-intl, lucide-react
+*/
+
+/*
+Component Summary: Renders the public marketing footer with localized link sections and social links.
+Steps:
+1. Exits early on dashboard routes to avoid duplicate layouts.
+2. Groups navigation and auth links with react-intl copy.
+3. Shows social icons and the current year for brand presence.
+Dependent Components: app/layout.tsx
+External Libs: next/link, next/navigation, react-intl, lucide-react
+*/
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useIntl } from "react-intl";
@@ -120,6 +140,9 @@ export default function Footer() {
     </footer>
   );
 }
+
+
+
 
 
 

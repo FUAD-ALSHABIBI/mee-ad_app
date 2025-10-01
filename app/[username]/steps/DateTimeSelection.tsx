@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Collects the appointment date and time based on business availability.
+Steps:
+1. Fetches working hours and existing bookings from Supabase to understand constraints.
+2. Uses date-fns helpers to build a rolling calendar and available time slots for the chosen service duration.
+3. Persists the selected slot via updateBookingData and moves the wizard forward.
+Component Dependencies: None
+External Libs: react, react-intl, date-fns, lucide-react, @/lib/supabase/supa
+*/
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useIntl } from "react-intl";
@@ -653,5 +663,6 @@ const DateTimeSelection = ({
 };
 
 export default DateTimeSelection;
+
 
 

@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Configures booking confirmation preferences near the end of onboarding.
+Steps:
+1. Lets owners choose between automatic or manual confirmation handling.
+2. Toggles notification channels that should be triggered for new bookings.
+3. Persists selections, generates a booking URL from local storage, and advances to completion.
+Component Dependencies: None
+External Libs: react, react-intl
+*/
 
 import { useState } from "react";
 import { useIntl } from "react-intl";
@@ -183,3 +193,4 @@ const BookingConfirmationStep = ({ data, updateData, nextStep, prevStep }: any) 
 };
 
 export default BookingConfirmationStep;
+

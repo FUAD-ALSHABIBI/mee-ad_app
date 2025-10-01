@@ -1,4 +1,24 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Composes the marketing home page with hero messaging, features, and highlights for Meead.
+Steps:
+1. Builds localized copy collections with react-intl for each section.
+2. Wires CTA buttons to Next navigation for registration and pricing flows.
+3. Renders visual sections with lucide-react icons and Tailwind utility styling.
+Component Dependencies: None
+External Libs: react-intl, next/navigation, lucide-react
+*/
+
+/*
+Component Summary: Composes the marketing home page with hero messaging, features, and highlights for Meead.
+Steps:
+1. Builds localized copy collections with react-intl for each section.
+2. Wires CTA buttons to Next navigation for registration and pricing flows.
+3. Renders visual sections with lucide-react icons and Tailwind utility styling.
+Dependent Components: app/page.tsx
+External Libs: react-intl, next/navigation, lucide-react
+*/
 
 import { useIntl } from "react-intl";
 import { useRouter } from "next/navigation";
@@ -230,3 +250,5 @@ export default function HomePage() {
     </div>
   );
 }
+
+

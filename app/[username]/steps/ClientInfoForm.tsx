@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Captures client contact details before confirming a booking.
+Steps:
+1. Displays the selected service, date, and time alongside input fields for personal information.
+2. Uses React state to track validation errors and whether terms are accepted.
+3. Validates required data, persists it via updateBookingData, and advances to the confirmation step.
+Component Dependencies: None
+External Libs: react, react-intl, lucide-react
+*/
 
 import { useMemo, useState } from "react";
 import { useIntl } from "react-intl";
@@ -323,3 +333,4 @@ const ClientInfoForm = ({
 };
 
 export default ClientInfoForm;
+

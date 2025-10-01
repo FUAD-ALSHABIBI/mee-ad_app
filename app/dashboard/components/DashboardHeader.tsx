@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Renders the dashboard top bar with language toggle, notifications, and user menu.
+Steps:
+1. Loads the current user via Supabase helpers to derive a display name for the avatar menu.
+2. Manages dropdown visibility with click-outside and escape key listeners.
+3. Exposes language switching, profile links, and logout actions in the user menu.
+Component Dependencies: components/common/LanguageSwitcher.tsx
+External Libs: react, react-intl, lucide-react, next/link, @/lib/supabase/auth, @supabase/supabase-js
+*/
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useIntl } from "react-intl";
@@ -19,7 +29,7 @@ const DashboardHeader = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  // اغلاق القائمة عند الضغط خارجها
+  // Ø§ØºÙ„Ø§Ù‚ Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø¹Ù†Ø¯ Ø§Ù„Ø¶ØºØ· Ø®Ø§Ø±Ø¬Ù‡Ø§
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -37,7 +47,7 @@ const DashboardHeader = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [userMenuOpen]);
 
-  // اغلاق القائمة عند الضغط على Escape
+  // Ø§ØºÙ„Ø§Ù‚ Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø¹Ù†Ø¯ Ø§Ù„Ø¶ØºØ· Ø¹Ù„Ù‰ Escape
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") setUserMenuOpen(false);
@@ -49,7 +59,7 @@ const DashboardHeader = () => {
     return () => document.removeEventListener("keydown", handleEscape);
   }, [userMenuOpen]);
 
-  // جلب بيانات المستخدم
+  // Ø¬Ù„Ø¨ Ø¨ÙŠØ§Ù†Ø§Øª Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù…
   useEffect(() => {
     let isMounted = true;
     const fetchUser = async () => {
@@ -79,7 +89,7 @@ const DashboardHeader = () => {
     };
   }, [defaultUserName]);
 
-  // تسجيل الخروج
+  // ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø®Ø±ÙˆØ¬
   const handleLogout = useCallback(async () => {
     try {
       await logout();
@@ -92,12 +102,12 @@ const DashboardHeader = () => {
 
   return (
     <header className="flex items-center justify-end space-x-2 sm:space-x-4">
-      {/* تغيير اللغة */}
+      {/* ØªØºÙŠÙŠØ± Ø§Ù„Ù„ØºØ© */}
       <div className="hidden sm:block">
         <LanguageSwitcher />
       </div>
 
-      {/* الإشعارات */}
+      {/* Ø§Ù„Ø¥Ø´Ø¹Ø§Ø±Ø§Øª */}
       <button
         type="button"
         className="rounded-full bg-white p-2 text-gray-500 hover:text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary transition-colors duration-150"
@@ -107,7 +117,7 @@ const DashboardHeader = () => {
         <Bell size={18} className="sm:w-5 sm:h-5" />
       </button>
 
-      {/* القائمة المنسدلة للمستخدم */}
+      {/* Ø§Ù„Ù‚Ø§Ø¦Ù…Ø© Ø§Ù„Ù…Ù†Ø³Ø¯Ù„Ø© Ù„Ù„Ù…Ø³ØªØ®Ø¯Ù… */}
       <div className="relative" ref={dropdownRef}>
         <button
           ref={buttonRef}
@@ -139,14 +149,14 @@ const DashboardHeader = () => {
             className="absolute right-0 z-50 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 animate-in fade-in-0 zoom-in-95"
             role="menu"
           >
-            {/* اللغة للموبايل */}
+            {/* Ø§Ù„Ù„ØºØ© Ù„Ù„Ù…ÙˆØ¨Ø§ÙŠÙ„ */}
             <div className="block sm:hidden border-b border-gray-100 pb-2 mb-2">
               <div className="px-4 py-2">
                 <LanguageSwitcher />
               </div>
             </div>
 
-            {/* اسم المستخدم للموبايل */}
+            {/* Ø§Ø³Ù… Ø§Ù„Ù…Ø³ØªØ®Ø¯Ù… Ù„Ù„Ù…ÙˆØ¨Ø§ÙŠÙ„ */}
             <div className="block md:hidden px-4 py-2 border-b border-gray-100 mb-2">
               <p className="text-sm font-medium text-gray-900 truncate">
                 {isLoading
@@ -155,7 +165,7 @@ const DashboardHeader = () => {
               </p>
             </div>
 
-            {/* الإعدادات */}
+            {/* Ø§Ù„Ø¥Ø¹Ø¯Ø§Ø¯Ø§Øª */}
             <Link
               href="/settings"
               className="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
@@ -166,7 +176,7 @@ const DashboardHeader = () => {
               {intl.formatMessage({ id: "common.settings" })}
             </Link>
 
-            {/* تسجيل الخروج */}
+            {/* ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø®Ø±ÙˆØ¬ */}
             <button
               onClick={handleLogout}
               className="flex w-full items-center px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
@@ -183,3 +193,4 @@ const DashboardHeader = () => {
 };
 
 export default DashboardHeader;
+

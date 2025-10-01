@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Provides the navigational sidebar for dashboard screens.
+Steps:
+1. Builds a list of navigation targets with localized labels and active state detection.
+2. Renders each entry with lucide icons and Tailwind styles for feedback.
+3. Invokes the Supabase logout helper and closes the drawer when the user signs out.
+Component Dependencies: None
+External Libs: react-intl, next/navigation, lucide-react, @/lib/supabase/auth
+*/
 
 import {
   LayoutDashboard,
@@ -97,3 +107,4 @@ const Sidebar = ({ closeSidebar }: SidebarProps) => {
 };
 
 export default Sidebar;
+

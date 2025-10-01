@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Lets clients browse and choose a service during the booking flow.
+Steps:
+1. Normalizes service data and derives categories with memoized helpers.
+2. Filters services by search text and category selection while showing details.
+3. Updates the booking payload and advances when a service is confirmed.
+Component Dependencies: None
+External Libs: react, react-intl, lucide-react
+*/
 
 import { useCallback, useMemo, useState } from "react";
 import { useIntl } from "react-intl";
@@ -302,3 +312,4 @@ const ServiceSelection = ({
 };
 
 export default ServiceSelection;
+

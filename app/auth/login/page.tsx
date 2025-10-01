@@ -1,4 +1,14 @@
-"use client";
+﻿"use client";
+
+/*
+Component Summary: Handles user authentication via Supabase on the login route.
+Steps:
+1. Collects email and password input with visibility toggles and basic validation.
+2. Signs users in through Supabase and redirects to the desired destination on success.
+3. Surfaces recovery options by launching the ForgotPasswordModal when requested.
+Component Dependencies: components/auth/ForgotPasswordModal.tsx
+External Libs: react, next/navigation, next/link, react-intl, lucide-react, @supabase/ssr
+*/
 
 import { useState } from "react";
 import Link from "next/link";
@@ -119,7 +129,7 @@ export default function LoginPage() {
                     autoComplete="current-password"
                     required
                     className="input w-full pr-10"
-                    placeholder={intl.formatMessage({ id: "auth.passwordPlaceholder", defaultMessage: "••••••••" })}
+                    placeholder={intl.formatMessage({ id: "auth.passwordPlaceholder", defaultMessage: "â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" })}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                   />
@@ -176,3 +186,4 @@ export default function LoginPage() {
     </>
   );
 }
+

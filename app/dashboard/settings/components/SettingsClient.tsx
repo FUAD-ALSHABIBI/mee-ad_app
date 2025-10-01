@@ -1,5 +1,15 @@
 ﻿"use client";
 
+/*
+Component Summary: Provides the dashboard settings UI to manage business profile data.
+Steps:
+1. Builds tab metadata and form defaults from existing business records with react-intl labels.
+2. Tracks form changes, dirty state, and handles reset interactions.
+3. Persists updates through updateBusinessDetails while reporting success or failure to the user.
+Component Dependencies: None
+External Libs: react, react-intl, next/link, @/lib/business
+*/
+
 import { useCallback, useMemo, useState } from "react";
 import type { ChangeEvent } from "react";
 import Link from "next/link";
@@ -466,3 +476,4 @@ function PlaceholderTab({ tabId }: PlaceholderTabProps) {
     </div>
   );
 }
+

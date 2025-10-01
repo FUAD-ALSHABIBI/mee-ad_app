@@ -1,3 +1,13 @@
+﻿/*
+Component Summary: Loads dashboard data on the server before rendering the interactive client view.
+Steps:
+1. Uses Supabase auth to verify the current user and redirects to login when unauthenticated.
+2. Queries business, service, and appointment tables while collecting error diagnostics.
+3. Computes derived metrics and passes results into the DashboardClient component.
+Component Dependencies: app/dashboard/components/DashboardClient.tsx
+External Libs: next/navigation, @/utils/supabase/server
+*/
+
 import { redirect } from "next/navigation";
 
 import { createClient } from "@/utils/supabase/server";
@@ -183,3 +193,4 @@ export default async function DashboardPage() {
     />
   );
 }
+
